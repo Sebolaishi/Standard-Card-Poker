@@ -1,6 +1,9 @@
 package com.standard.card.services;
 
+import com.standard.card.lookup.LookUps;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,7 +15,9 @@ public class CardsDeck {
     /**
      * Properties
      */
-    private static List<Integer> deck = new ArrayList<>();
+    private static List<String> suits = LookUps.getSuitList();
+    private static List<String> ranks = LookUps.getRankList();
+    private static int MIN_SIZE = 0;
 
     /**
      * Constructors
@@ -25,30 +30,30 @@ public class CardsDeck {
      */
 
     /**
-     * The method takes in cards deck size and returns a list of shuffled deck.
-     * @param deckSize
-     * @return deck
+     * Method returns a list of cards.
+     * @return deckList
      */
-    public static List<Integer> getDeck(int deckSize){
+    public static List<String> getDeck(){
 
-        for (int i = 0; i < deckSize; ++i) {
-            deck.add(i);
+        String[] deck = new String[getDeckSize()];
+
+        for (int i = MIN_SIZE; i < ranks.size(); i++) {
+            for (int j = MIN_SIZE; j < suits.size(); j++) {
+                deck[suits.size() * i + j] = ranks.get(i) + " of " + suits.get(j);
+            }
         }
 
-        Collections.shuffle(deck);
-
-        return deck;
+        List<String> deckList = Arrays.asList(deck);
+        Collections.shuffle(deckList);
+        return deckList;
     }
 
     /**
-     *Getters And Setters
+     * Method gets the cards deck size.
+     * @return
      */
-
-    public static List<Integer> getDeck() {
-        return deck;
+    private static int getDeckSize(){
+        return suits.size() * ranks.size();
     }
 
-    public static void setDeck(List<Integer> deck) {
-        CardsDeck.deck = deck;
-    }
 }

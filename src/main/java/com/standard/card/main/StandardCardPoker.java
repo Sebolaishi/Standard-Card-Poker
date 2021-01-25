@@ -18,7 +18,5 @@ public class StandardCardPoker {
      */
     public static void main(String[] args){
 
-        List<Integer> results = CardsDeck.getDeck(DECK_SIZE);
-        System.out.println(results);
     }
 }
