@@ -35,17 +35,17 @@ public class CardsDeck {
      */
     public static List<String> getDeck(){
 
-        String[] deck = new String[getDeckSize()];
+        List<String> decks = new ArrayList<>(getDeckSize());
 
         for (int i = MIN_SIZE; i < ranks.size(); i++) {
             for (int j = MIN_SIZE; j < suits.size(); j++) {
-                deck[suits.size() * i + j] = ranks.get(i) + " of " + suits.get(j);
+                decks.add(ranks.get(i) + " of " + suits.get(j));
             }
         }
 
-        List<String> deckList = Arrays.asList(deck);
-        Collections.shuffle(deckList);
-        return deckList;
+        Collections.shuffle(decks);
+
+        return decks;
     }
 
     /**
