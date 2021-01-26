@@ -16,4 +16,16 @@ public interface Messages {
     String END_OF_GAME = "\n**************** Game Closing, Thank you For Taking Part ******************\n";
 
     String GAME_START_USER_PROMPT = "**************** Please press enter to start the game  ******************\n";
+
+    String PLAYERS_NUMBER = "Please enter players number : ";
+
+    String CARDS_NUMBER = "Please enter player cards number : ";
+
+    String CARDS_SHUFFLE = "\n*************** Please press enter to shuffle the cards *****************";
+
+    String CARDS_SHUFFLED = "n*************** Shuffled Cards Deck *****************";
+
+    String PLAYER_DRAW = "\n*************** Please press enter for players draw *****************";
+
+    String PLAYER_HAND = "*************** Player(s) hand(s) *****************";
 }
