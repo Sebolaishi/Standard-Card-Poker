@@ -22,9 +22,13 @@ public class ServiceTest extends TestCommons {
     private static List<String> deckList = new ArrayList<>();
     private static HashMap<String, List<String>> playersDeck = new HashMap<>();
 
+    /**
+     * Method executes first to initialise, and build dependencies
+     */
     @BeforeClass
     public static void setUpBeforeClass()
     {
+        System.out.println(TEST_START_MESSAGE);
         deckList = CardsDeck.getDeck();
         playersDeck = CardDraw.playersCards(player_cards_number, players, deckList);
     }
@@ -44,6 +48,7 @@ public class ServiceTest extends TestCommons {
     @Test
     public void getPlayersDeck(){
         System.out.println(" \n" + playersDeck.get("Player_2"));
+        System.out.println(" \n" + playersDeck);
         Assert.assertNotNull("List is not null ", playersDeck);
     }
 }
