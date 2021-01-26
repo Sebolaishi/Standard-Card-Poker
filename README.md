@@ -5,6 +5,5 @@
 # Instructions 
 1. Clone the project into your local workplace.
 2. Build the project using maven commads [clean,install]
-3. Now copy the jar file out of the target folder and put it inside your workplace,
-4. Alternatively you can download the uploaded jar.
-5. Execute the build script.
+3. Execute the build script.
+
